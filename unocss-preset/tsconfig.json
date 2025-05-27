@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": false,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "tsdown.config.ts",
+    "./src/*.ts"
+  ]
+}

@@ -1,11 +1,11 @@
 {
-  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "noEmit": false
+    "strict": true,
+    "noEmit": false,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "vite.config.ts"

@@ -1,10 +1,27 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  },
   "references": [
     {
-      "path": "./core/themes"
+      "path": "./themes"
     },
     {
-      "path": "./core/components"
+      "path": "./unocss-preset"
+    },
+    {
+      "path": "./playground"
     }
+  ],
+  "include": [
+    "./components/*.d.ts",
+    "./components/**/*.ts",
+    "./components/**/*.vue"
+  ],
+  "exclude": [
+    "./components/**/__tests__/*"
   ]
 }

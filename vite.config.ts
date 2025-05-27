@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
@@ -8,7 +9,7 @@ export default defineConfig({
       name: 'WizardUI',
       formats: ['es', 'cjs', 'iife'],
       entry: {
-        index: 'index.ts',
+        index: './components/index.ts',
       },
     },
     rollupOptions: {
@@ -23,10 +24,8 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    unocss(),
     dts({
-      include: [
-        './',
-      ],
       exclude: [
         'node_modules',
         'dist',

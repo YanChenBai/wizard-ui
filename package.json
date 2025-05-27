@@ -6,18 +6,59 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
-    "build:pre:themes": "pnpm run --filter @wizard-ui/themes build",
-    "build:pre:preset": "pnpm run --filter @wizard-ui/preset build",
-    "build-pre": "run-p build:pre:*"
+    "run:themes": "pnpm run --filter @wizard-ui/themes",
+    "run:preset": "pnpm run --filter @wizard-ui/preset",
+    "run:playground": "pnpm run --filter playground",
+    "dev:themes": "pnpm run:themes dev",
+    "dev:preset": "pnpm run:preset dev",
+    "dev:playground": "pnpm run:playground dev",
+    "dev:components": "run-p uno:dev vite:dev",
+    "build:themes": "pnpm run:themes build",
+    "build:preset": "pnpm run:preset build",
+    "build:components": "run-s uno:build vite:build",
+    "build:pre": "run-s build:themes build:preset",
+    "uno:build": "unocss -m",
+    "uno:dev": "unocss -w",
+    "vite:build": "vite build",
+    "vite:dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@unocss/reset": "^66.1.2",
+    "@wizard-ui/themes": "workspace:*",
+    "vite-plugin-dts": "^4.5.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.2",
     "@tsconfig/node22": "^22.0.2",
+    "@unocss/cli": "^66.1.2",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/tsconfig": "^0.7.0",
+    "@wizard-ui/preset": "workspace:*",
     "eslint": "^9.27.0",
     "jiti": "^2.4.2",
-    "npm-run-all2": "^8.0.4"
+    "npm-run-all2": "^8.0.4",
+    "typescript": "^5.8.3",
+    "unocss": "^66.1.2",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4",
+    "vue": "^3.5.15"
   }
 }
