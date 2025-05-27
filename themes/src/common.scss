@@ -1,0 +1,103 @@
+@mixin size-scheme($type, $sizeMap) {
+  @each $size, $val in $sizeMap {
+    --w-#{$type}-#{$size}: var(--w-size-#{$val});
+  }
+
+  /** @line-break 2 */
+}
+
+@mixin font-size-scheme($type, $sizeMap) {
+  @each $size, $val in $sizeMap {
+    --w-#{$type}-#{$size}: var(--w-font-size-#{$val});
+  }
+
+  /** @line-break 2 */
+}
+
+@mixin lint-height-scheme($type, $sizeMap) {
+  @each $size, $val in $sizeMap {
+    --w-#{$type}-#{$size}: var(--w-line-height-#{$val});
+  }
+
+  /** @line-break 2 */
+}
+
+@mixin color-scheme($type, $normal, $hover, $pressed, $suppl) {
+  /** ------ #{$type} color ------ */
+  /** @line-break */
+  /** normal color */
+  --w-#{$type}-color: #{$normal};
+
+  /** hover color */
+  --w-#{$type}-color-hover: #{$hover};
+
+  /** pressed color */
+  --w-#{$type}-color-pressed: #{$pressed};
+
+  /** active color */
+  --w-#{$type}-color-suppl: #{$suppl};
+  /** @line-break 2 */
+}
+
+
+@mixin common-variables {
+  /** ------ size/padding/margin ------ */
+  --w-size-1: 2px;
+  --w-size-2: 4px;
+  --w-size-3: 6px;
+  --w-size-4: 8px;
+  --w-size-5: 12px;
+  --w-size-6: 16px;
+  --w-size-7: 20px;
+  --w-size-8: 24px;
+  --w-size-9: 28px;
+  --w-size-10: 32px;
+  --w-size-11: 36px;
+  --w-size-12: 40px;
+  --w-size-13: 48px;
+  --w-size-14: 56px;
+  --w-size-15: 64px;
+  --w-size-16: 72px;
+  /** @line-break 2 */
+
+  /** ------ font size ------ */
+  --w-font-size-1: 11px;
+  --w-font-size-2: 12px;
+  --w-font-size-3: 14px;
+  --w-font-size-4: 16px;
+  --w-font-size-5: 20px;
+  --w-font-size-6: 24px;
+  --w-font-size-7: 32px;
+  /** @line-break 2 */
+
+  /** ------ line height ------ */
+  --w-line-height-1: 16px;
+  --w-line-height-2: 20px;
+  --w-line-height-3: 22px;
+  --w-line-height-4: 24px;
+  --w-line-height-5: 28px;
+  --w-line-height-6: 32px;
+  --w-line-height-7: 44px;
+  /** @line-break 2 */
+
+  /** ------ size/left right/padding ------ */
+  @include size-scheme('comp-padding-lr', (xxs: 1, xs: 2, sm: 4, md: 5, lg: 6, xl: 8, xxl: 10));
+
+  /** ------ size/top bottom/padding ------ */
+  @include size-scheme('comp-padding-tb', (xxs: 1, xs: 2, sm: 4, md: 5, lg: 6, xl: 8, xxl: 10));
+
+  /** ------ component size height ------ */
+  @include size-scheme('comp-size', (xxxs: 6, xxs: 7, xs:8, sm: 9, md: 10, lg: 11, xl: 12, xxl: 13, xxxl: 14, xxxxl: 15, xxxxxl: 16));
+
+  /** ------ popup size ------ */
+  @include size-scheme('popup-padding', (sm: 2, md: 3, lg: 4, xl: 5, xxl: 6));
+
+  /** ------ component margin ------ */
+  @include size-scheme('comp-margin', (xxs: 1, xs: 2, sm: 4, md: 5, lg: 6, xl: 7, xxl: 8, xxxl: 10, xxxxl: 12));
+
+  /** ------ button font size ------ */
+  @include font-size-scheme('btn-font-size', (xxs: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6, xxl: 7));
+
+  /** ------ lint height ------ */
+  @include lint-height-scheme('lint-height', (xxs: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6, xxl: 7))
+}

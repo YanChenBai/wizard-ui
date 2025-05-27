@@ -1,4 +1,6 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
+import linebreaks from 'vite-plugin-linebreaks'
 
 export default defineConfig({
   build: {
@@ -15,8 +17,16 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: ``,
+        additionalData: `@use '@/common' as *;`,
       },
     },
   },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  plugins: [
+    linebreaks(),
+  ],
 })

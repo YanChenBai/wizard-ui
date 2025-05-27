@@ -4,15 +4,12 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "types": ["node"],
     "strict": true,
     "noEmit": false,
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "vite.config.ts"
+    "tsdown.config.ts",
+    "./src/*.ts"
   ]
 }

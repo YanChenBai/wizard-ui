@@ -1,9 +1,3 @@
-$common: (
-  --light-primary: #000000
-);
-
 :root {
-  @each $key, $val in $common {
-    #{$key}: #{$val};
-  }
+  --p: 0
 }
