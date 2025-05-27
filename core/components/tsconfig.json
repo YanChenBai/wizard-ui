@@ -1,0 +1,17 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "composite": true,
+    "experimentalDecorators": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false
+  },
+  "include": [
+    "*.d.ts",
+    "**/*",
+    "**/*.vue"
+  ],
+  "exclude": [
+    "**/__tests__/*"
+  ]
+}

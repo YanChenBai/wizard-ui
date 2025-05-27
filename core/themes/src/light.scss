@@ -1,0 +1,9 @@
+$common: (
+  --light-primary: #fafafa
+);
+
+:root {
+  @each $key, $val in $common {
+    #{$key}: #{$val};
+  }
+}

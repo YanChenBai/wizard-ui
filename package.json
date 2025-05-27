@@ -1,0 +1,23 @@
+{
+  "name": "wizard-ui",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "build:pre:themes": "pnpm run --filter @wizard-ui/themes build",
+    "build:pre:preset": "pnpm run --filter @wizard-ui/preset build",
+    "build-pre": "run-p build:pre:*"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "@tsconfig/node22": "^22.0.2",
+    "eslint": "^9.27.0",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^8.0.4"
+  }
+}
