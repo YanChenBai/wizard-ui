@@ -2,14 +2,14 @@
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "experimentalDecorators": true,
     "strict": true,
-    "noEmit": false,
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "tsdown.config.ts",
-    "./src/**/*.ts"
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "**/__tests__/*"
   ]
 }

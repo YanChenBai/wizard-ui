@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button class="bg-red p-(x1 y2)">
+  <button class=" bg-primary hover:bg-primary-hover">
     <slot />
   </button>
 </template>

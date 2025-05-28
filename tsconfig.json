@@ -14,6 +14,9 @@
     },
     {
       "path": "./playground"
+    },
+    {
+      "path": "./tsconfig.node.json"
     }
   ],
   "include": [
@@ -22,6 +25,6 @@
     "./components/**/*.vue"
   ],
   "exclude": [
-    "./components/**/__tests__/*"
+    "**/__tests__/*"
   ]
 }

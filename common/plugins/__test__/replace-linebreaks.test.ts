@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { replaceLinebreaks } from '../replace-linebreaks'
+import { replaceLinebreaks } from '../src/linebreak-comment'
 
 const demo = `
 .name1 {
@@ -39,8 +39,6 @@ const answer = `
 }
 `
 
-describe('vite-plugin-linebreaks', () => {
-  it('replace linebreaks', () => {
-    expect(replaceLinebreaks(demo)).toBe(answer)
-  })
+it('replace linebreaks', () => {
+  expect(replaceLinebreaks(demo)).toBe(answer)
 })

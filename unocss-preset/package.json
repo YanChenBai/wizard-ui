@@ -18,6 +18,8 @@
     "dev": "tsdown --watch"
   },
   "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@wizard-ui/themes": "workspace:*",
     "tsdown": "^0.12.3",
     "unocss": "^66.1.2"
   }

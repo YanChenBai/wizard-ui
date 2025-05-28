@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
+import { cssVarsToObject, linebreakComment } from '@wizard-ui/plugins'
 import { defineConfig } from 'vite'
-import linebreaks from 'vite-plugin-linebreaks'
 
 export default defineConfig({
   build: {
@@ -17,7 +17,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '@/common' as *;`,
+        additionalData: `
+        @use './common' as *;
+        `,
       },
     },
   },
@@ -27,6 +29,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    linebreaks(),
+    linebreakComment(),
+    cssVarsToObject({
+      targetFile: 'light.css',
+    }),
   ],
 })

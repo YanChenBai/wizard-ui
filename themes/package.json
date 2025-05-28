@@ -7,10 +7,18 @@
   "license": "ISC",
   "keywords": [],
   "exports": {
-    "./*": "./dist/*"
+    "./*": "./dist/*",
+    "./vars": {
+      "types": "./dist/vars.d.ts",
+      "default": "./dist/vars.js"
+    },
+    "./colors": {
+      "types": "./dist/colors.d.ts",
+      "default": "./dist/colors.js"
+    }
   },
   "files": [
-    "dist/**/*.css"
+    "dist/*"
   ],
   "scripts": {
     "build": "vite build",
@@ -18,9 +26,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@wizard-ui/plugins": "workspace:*",
     "sass": "^1.89.0",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vite-plugin-linebreaks": "workspace:*"
+    "vite": "^6.3.5"
   }
 }
