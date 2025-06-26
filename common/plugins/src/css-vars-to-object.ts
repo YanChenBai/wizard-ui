@@ -16,7 +16,7 @@ export async function saveJsonFiles(dir: string, files: SaveJsonFile[]) {
   await Promise.all(
     files.map(file => [
       fs.writeFile(path.join(dir, `${file.name}.js`), file.code),
-      fs.writeFile(path.join(dir, `${file.name}.d.ts`), file.dts)
+      fs.writeFile(path.join(dir, `${file.name}.d.ts`), file.dts),
     ]).flat(),
   )
 }
@@ -44,7 +44,7 @@ export function cssVarsToObject({
     if (node.type === 'rule' && node.selector === selector) {
       node.nodes.forEach((node) => {
         if (node.type === 'decl')
-          cssObj[camelCase(node.prop.replace(cssVarPrefix, ''))] = `var(${node.prop})`
+          cssObj[node.prop.replace(cssVarPrefix, '')] = `var(${node.prop})`
       })
     }
   })
@@ -58,7 +58,7 @@ interface Options {
 }
 
 export default function (options: Options): Plugin {
-  const { targetFile, selector = ':root'} = options
+  const { targetFile, selector = ':root' } = options
   let outDir = ''
 
   return {
@@ -87,7 +87,7 @@ export default function (options: Options): Plugin {
           const colors = getUnoColors(vars)
 
           await saveJsonFiles(outDir, [
-            { name: 'vars',...objToCode(vars, 'vars') },
+            { name: 'vars', ...objToCode(vars, 'vars') },
             { name: 'colors', ...objToCode(colors, 'colors') },
           ])
 

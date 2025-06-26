@@ -24,7 +24,9 @@
 
 @mixin color-scheme($type, $normal, $hover, $pressed, $suppl) {
   /* ------ #{$type} color ------ */
+
   /* @line-break */
+
   /* normal color */
   --w-#{$type}-color: #{$normal};
 
@@ -36,11 +38,11 @@
 
   /* active color */
   --w-#{$type}-color-suppl: #{$suppl};
+
   /* @line-break 2 */
 }
 
 @mixin text-color-scheme($colorMap) {
-
   /* ------ text color ------ */
   @each $type, $val in $colorMap {
     --w-text-color-#{$type}: #{$val};
@@ -67,6 +69,7 @@
   --w-size-14: 56px;
   --w-size-15: 64px;
   --w-size-16: 72px;
+
   /* @line-break 2 */
 
   /* ------ font size ------ */
@@ -77,6 +80,7 @@
   --w-font-size-5: 20px;
   --w-font-size-6: 24px;
   --w-font-size-7: 32px;
+
   /* @line-break 2 */
 
   /* ------ line height ------ */
@@ -87,6 +91,7 @@
   --w-line-height-5: 28px;
   --w-line-height-6: 32px;
   --w-line-height-7: 44px;
+
   /* @line-break 2 */
 
   /* ------ size/left right/padding ------ */

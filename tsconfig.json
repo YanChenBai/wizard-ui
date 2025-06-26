@@ -1,7 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
-    "experimentalDecorators": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true
   },
@@ -13,18 +12,10 @@
       "path": "./unocss-preset"
     },
     {
-      "path": "./playground"
+      "path": "./tsconfig.node.json"
     },
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.app.json"
     }
-  ],
-  "include": [
-    "./components/*.d.ts",
-    "./components/**/*.ts",
-    "./components/**/*.vue"
-  ],
-  "exclude": [
-    "**/__tests__/*"
   ]
 }

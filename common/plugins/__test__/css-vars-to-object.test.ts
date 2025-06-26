@@ -11,8 +11,8 @@ describe('css vars to Json', () => {
 }
 `
   const objExample = {
-    size1: 'var(--w-size-1)',
-    btnSize2: 'var(--w-btn-size-2)',
+    'size-1': 'var(--w-size-1)',
+    'btn-size-2': 'var(--w-btn-size-2)',
   }
 
   it('should generate js and d.ts files', () => {
@@ -28,19 +28,19 @@ describe('css vars to Json', () => {
 
 describe('object to code', () => {
   const example = {
-    size1: '1',
-    btnSize2: '2',
+    'size-1': '1',
+    'btn-size-2': '2',
   }
 
   const codeExample = `export const vars = {
-    "size1": "1",
-    "btnSize2": "2"
+    "size-1": "1",
+    "btn-size-2": "2"
 };
 `
 
   const dtsExample = `export declare const vars: {
-    readonly size1: \"1\";
-    readonly btnSize2: \"2\";
+    readonly \"size-1\": \"1\";
+    readonly \"btn-size-2\": \"2\";
 };
 `
 

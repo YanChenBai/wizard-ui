@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
@@ -26,11 +27,14 @@ export default defineConfig({
     vue(),
     unocss(),
     dts({
-      exclude: [
-        'node_modules',
-        'dist',
-        'vite.config.ts',
+      include: [
+        './components/**/*.{vue,ts}',
       ],
     }),
   ],
+  resolve: {
+    alias: {
+      'wizard-ui': fileURLToPath(new URL('./components/index.ts', import.meta.url)),
+    },
+  },
 })

@@ -1,15 +1,9 @@
 :root {
   @include common-variables;
-
   @include color-scheme('primary', '#FB7299', '#FB8AAA', '#DB6486', '#FB8AAA');
-
   @include color-scheme('info', '#2080F0', '#4098FC', '#1060C9', '#78aff0');
-
   @include color-scheme('success', '#18A058', '#36AD6A', '#0C7A43', '#36AD6A');
-
   @include color-scheme('warning', '#F0A020', '#FCB040', '#C97C10', '#FCB040');
-
   @include color-scheme('error', '#D03050', '#DE576D', '#AB1F3F', '#D03050');
-
   @include text-color-scheme((disabled: '#C2C2C2', base: '#000', placeholder-disabled:'#D1D1D1', placeholder:'#C2C2C2', 1: '#1F2225', 2: '#333639', 3: '#767C82'));
 }
